@@ -1,5 +1,7 @@
 # Optimus
 
+![optimus-logo](./images/optimus-logo-shiny.gif)
+
 Optimus API is a key-value store which allows Data Scientists to save and
 retrieve reference data and model coefficients which are calculated
 across millions of users or items. The API resembles a common
