@@ -45,6 +45,7 @@
         :bootclasspath false
         :jvm-opts ["-server" "-Dfile.encoding=utf-8" "$JVM_OPTS" ]}
 
+  :global-vars {*warn-on-reflection* true}
 
   :resource-paths ["resources" "../ver" ]
 

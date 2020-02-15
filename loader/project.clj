@@ -32,6 +32,8 @@
   :profiles {:dev {:plugins [[lein-midje "3.2.2"]]
                    :dependencies [[midje "1.9.9"]]}}
 
+  :global-vars {*warn-on-reflection* true}
+
   :resource-paths ["resources" "../ver" ]
 
   :uberjar-merge-with {#"reference.conf$" [slurp str spit]}

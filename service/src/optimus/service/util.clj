@@ -81,12 +81,13 @@
       (t)
   "
   {:style/indent 1}
-  [name f & {:keys [with-state sleep-time]
-             :or {with-state false
-                  sleep-time 3000}}]
+  [^String name f & {:keys [with-state sleep-time]
+                     :or {with-state false
+                          sleep-time 3000}}]
   (let [stopped (atom false)
         thread
         (Thread.
+         ^Runnable
          (fn []
            (log/debug "Starting thread:" name)
            (loop [state nil]

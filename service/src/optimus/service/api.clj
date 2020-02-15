@@ -931,5 +931,5 @@
 
 
 (defn stop-server
-  [server]
+  [^java.io.Closeable server]
   (when server (.close server)))
