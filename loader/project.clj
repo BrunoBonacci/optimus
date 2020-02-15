@@ -29,12 +29,17 @@
 
                  [com.cognitect/transit-clj "0.8.319"]]
 
-  :profiles {:dev {:plugins [[lein-midje "3.2.2"]]
+  :profiles {:dev {:plugins [[lein-midje "3.2.2"]
+                             [lein-binplus "0.6.6"]]
                    :dependencies [[midje "1.9.9"]]}}
 
   :global-vars {*warn-on-reflection* true}
 
   :resource-paths ["resources" "../ver" ]
+
+  :bin {:name "loader"
+        :skip-realign true
+        :jvm-opts ["-server" "-Dfile.encoding=utf-8" "$JVM_OPTS" ]}
 
   :uberjar-merge-with {#"reference.conf$" [slurp str spit]}
 

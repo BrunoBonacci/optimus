@@ -42,7 +42,7 @@
                    :dependencies [[midje "1.9.9"]]}}
 
   :bin {:name "optimus"
-        :bootclasspath false
+        :skip-realign true
         :jvm-opts ["-server" "-Dfile.encoding=utf-8" "$JVM_OPTS" ]}
 
   :global-vars {*warn-on-reflection* true}

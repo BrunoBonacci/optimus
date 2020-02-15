@@ -20,6 +20,8 @@ For more information:
   - **service**: REST API for model store
   - **loader**: Spark job to load the key/value pairs in parallel
 
+To try it out, read the [Getting Started](./docs/optimus/getting-started.md) guide.
+
 ## License
 
 Copyright © 2018 Trainline.com - All rights reserved.
