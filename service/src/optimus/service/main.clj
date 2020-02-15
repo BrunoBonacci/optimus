@@ -281,6 +281,9 @@
         http-server      (start-api-server config backend)
         metrics-reporter (start-reporting! (:metrics config))]
 
+    (log/infof "Optimus server started listening at http://localhost:%d/"
+               (get-in config [:server :port]))
+
     {:backend          backend
      :async-processor  async-processor
      ;; start metrics
