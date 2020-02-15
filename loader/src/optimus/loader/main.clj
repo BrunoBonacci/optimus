@@ -6,12 +6,9 @@
             [clojure.string :as str]
             [clojure.tools.logging :as log]
             [clojure.edn :as edn]
-            [taoensso.timbre :as timbre]
             [optimus.loader.loader :refer [start-loader]])
   (:gen-class))
 
-;; Log level for startup.
-(timbre/set-level! :info)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                            ;;
@@ -355,10 +352,6 @@
       ;; Merge the configs. The order of precedence in order of
       ;; increasing precedence: cli -> config file -> default
       (let [config (merge DEFAULT-CONFIG (read-config (:config options)) options)]
-
-        ;; Configure logging
-        (when-let [logging (:logging config)]
-          (timbre/merge-config! logging))
 
         ;; Start Loader
         (start-loader config)

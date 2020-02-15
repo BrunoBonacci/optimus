@@ -5,14 +5,11 @@
             [optimus.service.backends.dynamo-util :refer [aws-config]]
             [optimus.service
              [backend :refer :all]
-             [util :refer [now] :as u]]
-            [taoensso.timbre :as log]))
+             [util :refer [now] :as u]]))
 
 ;; TODO: main init tables
 ;; TODO: search pagination
 
-;; required in order to configure the logger and avoid flood of logs from AWS
-(log/set-level! :info)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                                                                            ;;

@@ -6,7 +6,6 @@
   (:require [clojure.tools.logging :as log]
             ;;[aleph.http :as http]
             [clj-http.client :as http]
-            [taoensso.timbre :as timbre]
             [cheshire.core :refer [generate-string parse-string]]
             [safely.core :refer [safely]]
             [optimus.loader.api :as client]))

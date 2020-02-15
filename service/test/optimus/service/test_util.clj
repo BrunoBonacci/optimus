@@ -6,12 +6,7 @@
             [optimus.service
              [core :as sut]
              [util :refer [rand-id]]]
-            [optimus.service.backends.inmemory :as mem]
-            [taoensso.timbre :as timbre]))
-
-;; required in order to configure the logger and avoid flood of logs from AWS
-(timbre/set-level! :info)
-
+            [optimus.service.backends.inmemory :as mem]))
 
 (defn rand-str
   [label]

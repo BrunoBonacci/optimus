@@ -17,9 +17,7 @@
              [dynamodb-queue :as dq]
              [inmemory :as mem]]
             [optimus.service.backends.middleware.binary-kv-store :as bkv]
-            [samsara.trackit :refer :all]
-            [taoensso.timbre :as t]
-            [taoensso.timbre.tools.logging :as tl]))
+            [samsara.trackit :refer :all]))
 
 
 
@@ -144,19 +142,7 @@
     ;; :reporter-name - name for the metric reporter.
     :reporter-name "optimus"
     ;; disable jvm metrics by default.
-    :jvm-metrics :none}
-
-
-   ;; :logging - Logging configuration
-   :logging
-   {:level :info}})
-
-
-
-(defn configure-logger
-  [config]
-  (when config
-    (t/merge-config! config)))
+    :jvm-metrics :none}})
 
 
 
@@ -286,7 +272,6 @@
 
 (defn start
   [config]
-  (configure-logger (:logging config))
 
   (println (vanity-header))
 
