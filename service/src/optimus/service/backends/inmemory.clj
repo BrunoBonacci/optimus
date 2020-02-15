@@ -410,7 +410,7 @@
   ;; Returns a list of messages which match the given filter.
   (list-messages!
     [_ {:keys [status size page pid topic] :as filters
-        :or {status :all size 100 :page 1}}]
+        :or {status :all size 100 page 1}}]
 
     ;; the topic is required
     (when-not topic

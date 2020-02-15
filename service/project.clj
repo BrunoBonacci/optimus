@@ -5,7 +5,7 @@
   :url "https://github.com/BrunoBonacci/optimus"
   :license {:name "All rights reserved"}
 
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :dependencies [[org.clojure/clojure "1.10.1"]
 
                  [metosin/compojure-api "1.1.13"]
                  [aleph "0.4.6"]

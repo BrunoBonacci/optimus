@@ -234,7 +234,7 @@
   [{:keys [region task-queue-table
            reservation-index history-index] :as config}
    {:keys [status size page pid id topic] :as filters
-    :or {status :all size 100 :page 1}}]
+    :or {status :all size 100 page 1}}]
 
   ;; the topic is required
   (when-not topic
@@ -458,7 +458,7 @@
   ;; Returns a list of messages which match the given filter.
   (list-messages!
     [_ {:keys [status size page pid id topic] :as filters
-        :or {status :all :size 100 :page 1}}]
+        :or {status :all size 100 page 1}}]
     (->> (list-messages config filters)
          (map #(update % :message u/from-json))
          (map #(select-keys % [:id :timestamp :topic :message :lease :pid])))))
