@@ -76,8 +76,8 @@
    :count-verification
    {;; refer to safely (https://github.com/BrunoBonacci/safely) for more info.
     :retry-config
-    [:max-retry 3
-     :retry-delay [:random-exp-backoff :base 300 :+/- 0.50 :max 30000]
+    [:max-retries 3
+     :retry-delay [:random-exp-backoff :base 300 :+/- 0.50 :max 60000]
      :log-errors true
      :message "Error while verifying data. Counting kv pairs failed."]}
 

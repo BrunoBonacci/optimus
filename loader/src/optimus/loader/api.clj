@@ -58,7 +58,7 @@
             :form-params  entries})
 
      :on-error
-     :max-retry max-retries
+     :max-retries max-retries
      :retry-delay [:random-exp-backoff :base 300 :+/- 0.50 :max 30000]
      :retryable-error? retryable-error?
      :log-errors true
@@ -97,7 +97,7 @@
      (post url)
 
      :on-error
-     :max-retry max-retries
+     :max-retries max-retries
      :retry-delay [:random-exp-backoff :base 300 :+/- 0.50 :max 30000]
      :retryable-error? retryable-error?
      :log-errors true
@@ -113,7 +113,7 @@
      (post url)
 
      :on-error
-     :max-retry max-retries
+     :max-retries max-retries
      :retry-delay [:random-exp-backoff :base 300 :+/- 0.50 :max 30000]
      :retryable-error? retryable-error?
      :log-errors true

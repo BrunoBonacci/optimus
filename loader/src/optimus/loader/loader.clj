@@ -112,7 +112,7 @@
       (ex-info (str "Target status not reached."))))
 
    :on-error
-   :max-retry max-retries
+   :max-retries max-retries
    :retry-delay [:random-exp-backoff :base 300 :+/- 0.50 :max 30000]
    :log-errors false
    :message (str "poll-version: version status not " target-status)))
