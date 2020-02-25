@@ -3,7 +3,6 @@
 (ns optimus.service.backends.kvstore-test
   (:require [midje.sweet :refer :all]
             [optimus.service.test-util :refer [rand-str]]
-            [optimus.service.util :refer [deep-merge]]
             [optimus.service.backend :refer :all]
             [optimus.service.backends.inmemory :refer [in-mem-kv]]
             [optimus.service.backends.dynamodb-kv :refer [dynamodb-kv]]

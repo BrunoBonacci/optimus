@@ -33,7 +33,8 @@
                   :exclusions [samsara/trackit-core]]
                  [cheshire "5.10.0"]
                  [amalloy/ring-gzip-middleware "0.1.4"]
-                 [com.taoensso/nippy "2.14.0"]]
+                 [com.taoensso/nippy "2.14.0"]
+                 [com.brunobonacci/oneconfig "0.15.0"]]
 
   :profiles {:uberjar {:aot :all}
              :dev {:plugins [[lein-midje "3.2.2"]

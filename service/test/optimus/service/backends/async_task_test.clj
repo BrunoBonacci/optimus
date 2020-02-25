@@ -7,7 +7,6 @@
              [backend :as b]
              [core :as sut]
              [main :as m]
-             [util :refer [deep-merge]]
              [test-util :refer [backend-fixture rand-str throws-validation-ex]]]
             [optimus.service.backends.inmemory :as mem]
             [optimus.service.backends.dynamodb-kv :as dkv]))

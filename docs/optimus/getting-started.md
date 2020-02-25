@@ -17,16 +17,38 @@ database. The obvious downside is that you will lose all data once
 Optimus is shut down. Optimus also has built-in support for
 DynamoDB. (See: "Getting started with DynamoDB section below".)
 
+
+Optimus is integrated with
+[1Config](https://github.com/BrunoBonacci/1config) configuration
+system. It allows to manage configurations in sane and safe way.
+
+You can set your local configuration to use the in-memory store using
+the `1cfg` cli tool as follow:
+
+``` shell
+1cfg -b fs -k optimus -e local -v 0.1.0 -t edn SET -f sample-config/in-memory.edn
+
+# alternatively:
+export ONECONFIG_FILE=sample-config/in-memory.edn
+```
+
+For detailed documentation around config, refer to the `src/optimus/service/main.clj`.
+
+
 ##### Start the API and create a dataset.
 Navigate to the `service` directory and execute the following commands:
 
 ```
-#build standalone executable
+# build standalone executable
 optimus/service$ lein bin
 
-#start Optimus API
+# start Optimus API
+export ONECONFIG_FILE=sample-config/in-memory.edn
 optimus/service$ ./target/optimus
 ```
+
+
+
 
 Fire up a browser and navigate to [http://localhost:8888/](http://localhost:8888) to see the Swagger documentation for the API.
 
@@ -178,10 +200,9 @@ execute the following:
 optimus/service$ lein with-profile dev run -m optimus.dev-tools.create-dynamodb-tables [AWS-REGION]
 ```
 
-Start optimus API with a path to config EDN file. (you can use the
-sample dev configuration in the repo). For detailed documentation
-around config, refer to the `src/optimus/service/main.clj`.
+Once the tables have been created, you are ready to start the service.
 
 ```
-optimus/service$ ./target/optimus config/dev.edn
+export ONECONFIG_FILE=sample-config/dynamodb.edn
+optimus/service$ ./target/optimus
 ```

@@ -1,0 +1,45 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                                                                            ;;
+;;        ---==| M O D E L   D A T A   S T O R E   C O N F I G |==----        ;;
+;;                                                                            ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+{
+ ;; :server - HTTP Server configuration
+ :server
+ {;; :port - HTTP port to use
+  :port 8888
+  ;; :auto-reload - reloads the handler every time to make sure that
+  ;; any changes done to the code is picked up immediately while
+  ;; developing in the REPL.  set to true only during development.
+  :auto-reload false}
+
+
+ ;; :kv-store - configuration for the data store that stores KV pairs (entries)
+ :kv-store
+ {;; :type - the KV implementation to use. Default is :in-memory.
+  :type :in-memory}
+
+
+
+
+ ;; :meta-data-store - configuration for the metadata store that stores
+ ;; information about datasets, versions etc.,
+ :meta-data-store
+ {;; :name - name of the metadata store
+  :name "meta-data-store"
+  ;; :type - The metadata store implementation to use. Default is :in-memory
+  :type :in-memory}
+
+
+
+ ;; :queue - configuration for the operations queue
+ :queue
+ {;; :type - the queue implementation to use.
+  :type :in-memory
+  ;; :lease-time - the lease time to set for reservations.
+  ;; After this time the reserved item, if not acknowledged,
+  ;; will be available to grant reservation to other processes.
+  :lease-time 60000}
+
+}

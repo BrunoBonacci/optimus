@@ -4,7 +4,6 @@
   "This namespace contains common utility functions. Duh!"
   (:require [cheshire.core :as json]
             [clojure
-             [edn :as edn]
              [string :as str]]
             [clojure.java.io :as io]
             [clojure.tools.logging :as log]
@@ -188,24 +187,6 @@
   "
   []
   (System/currentTimeMillis))
-
-
-
-(defn deep-merge
-  "Like merge, but merges maps recursively."
-  [& maps]
-  (let [maps (filter (comp not nil?) maps)]
-    (if (every? map? maps)
-      (apply merge-with deep-merge maps)
-      (last maps))))
-
-
-
-(defn read-config
-  "Reads the config from a file in EDN format"
-  [config-file]
-  (when config-file
-    (edn/read-string (slurp config-file))))
 
 
 

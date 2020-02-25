@@ -9,21 +9,22 @@
  :server
  {;; :port - HTTP port to use
   :port 8888
-  ;; :auto-reload - reloads the handler every time to make sure that any changes
-  ;; done to the code is picked up immediately while developing in the REPL.
-  ;; set to true only during development.
-  :auto-reload true}
+  ;; :auto-reload - reloads the handler every time to make sure that
+  ;; any changes done to the code is picked up immediately while
+  ;; developing in the REPL.  set to true only during development.
+  :auto-reload false}
 
 
 
  ;; :aws - AWS configuration
  :aws
  {;; :region - the AWS region to be used.
+  ;; :region "us-east-1"
  }
 
 
 
- ;; :async-task - configuration for the async task that handles events from the
+ ;; :async-task - configuration for the async tasks that handles events from the
  ;; 'operations topic' and kicks off the corresponding operations.
  :async-task
  {;; :poll-interval The interval in ms in which the async task will

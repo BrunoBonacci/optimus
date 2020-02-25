@@ -10,14 +10,15 @@
              [async-task :as a]
              [backend :as b]
              [core :as ms]
-             [util :refer [deep-merge read-config service-version]]]
+             [util :refer [service-version]]]
             [optimus.service.backends
              [dynamodb-kv :as dkv]
              [dynamodb-meta-store :as dms]
              [dynamodb-queue :as dq]
              [inmemory :as mem]]
             [optimus.service.backends.middleware.binary-kv-store :as bkv]
-            [samsara.trackit :refer :all]))
+            [samsara.trackit :refer :all]
+            [com.brunobonacci.oneconfig :refer [configure deep-merge]]))
 
 
 
@@ -302,8 +303,18 @@
 
 
 
+(defn- retrieve-config
+  []
+  (->> (configure
+      {:key     (or (System/getenv "APP_KEY") "optimus")
+       :env     (or (System/getenv "ENV") "local")
+       :version (service-version)})
+     (:value)
+     (deep-merge DEFAULT-CONFIG)))
+
+
+
 (defn -main
-  [& [config-file & args]]
-  (let [config (deep-merge DEFAULT-CONFIG (read-config config-file))]
-    (start config)
-    @(promise)))
+  [& args]
+  (start (retrieve-config))
+  @(promise))
