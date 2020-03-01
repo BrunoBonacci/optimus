@@ -15,19 +15,19 @@
                  [gorillalabs/sparkling "2.1.3" ]
 
                  ;; logging
-                 [org.clojure/tools.logging "0.6.0"]
+                 [org.clojure/tools.logging "1.0.0"]
                  [org.slf4j/slf4j-log4j12 "1.7.30"]
                  [org.slf4j/jul-to-slf4j "1.7.30"]
                  [org.slf4j/jcl-over-slf4j "1.7.30"]
 
-                 [com.brunobonacci/safely "0.5.0-alpha8"]
-                 [org.clojure/tools.cli "0.4.2"]
+                 [com.brunobonacci/safely "0.5.0"]
+                 [org.clojure/tools.cli "1.0.194"]
 
                  [org.apache.spark/spark-core_2.10 "2.2.3"
                   :exclusions [commons-net org.slf4j/slf4j-log4j12]]
                  [org.apache.spark/spark-sql_2.10 "2.2.3"]
 
-                 [com.cognitect/transit-clj "0.8.319"]]
+                 [com.cognitect/transit-clj "1.0.324"]]
 
   :profiles {:dev {:plugins [[lein-midje "3.2.2"]
                              [lein-binplus "0.6.6"]]

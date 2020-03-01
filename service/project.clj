@@ -14,13 +14,13 @@
                  [amazonica "0.3.152"
                   :exclusions [com.amazonaws/aws-java-sdk
                                com.amazonaws/amazon-kinesis-client]]
-                 [com.amazonaws/aws-java-sdk-core "1.11.722"
+                 [com.amazonaws/aws-java-sdk-core "1.11.734"
                   :exclusions [commons-logging]]
-                 [com.amazonaws/aws-java-sdk-dynamodb "1.11.722"
+                 [com.amazonaws/aws-java-sdk-dynamodb "1.11.734"
                   :exclusions [commons-logging]]
 
                  ;; logging
-                 [org.clojure/tools.logging "0.6.0"]
+                 [org.clojure/tools.logging "1.0.0"]
                  [org.slf4j/slf4j-log4j12 "1.7.30"]
                  [org.slf4j/jul-to-slf4j "1.7.30"]
                  [org.slf4j/jcl-over-slf4j "1.7.30"]
@@ -29,7 +29,7 @@
                  [prismatic/schema "1.1.12"]
                  [com.brunobonacci/where "0.5.5"]
                  [samsara/trackit-core "0.9.3"]
-                 [com.brunobonacci/safely "0.5.0-alpha8"
+                 [com.brunobonacci/safely "0.5.0"
                   :exclusions [samsara/trackit-core]]
                  [cheshire "5.10.0"]
                  [amalloy/ring-gzip-middleware "0.1.4"]
