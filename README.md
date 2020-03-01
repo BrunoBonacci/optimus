@@ -24,4 +24,4 @@ To try it out, read the [Getting Started](./docs/optimus/getting-started.md) gui
 
 ## License
 
-Copyright © 2018 Trainline.com - All rights reserved.
+Copyright © 2018 Trainline.com - Apache License 2.0 [forked from Trainline/optimus](https://github.com/trainline/optimus)
