@@ -4,7 +4,8 @@
   :description "Spark based component that parallely loads key value
   pairs to the Optimus API"
   :url "https://github.com/BrunoBonacci/optimus"
-  :license {:name "All rights reserved"}
+  :license {:name "Apache License 2.0"
+            :url "http://www.apache.org/licenses/LICENSE-2.0"}
 
   :main optimus.loader.main
 

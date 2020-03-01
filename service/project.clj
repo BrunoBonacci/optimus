@@ -3,7 +3,8 @@
 (defproject com.trainline/optimus (-> "../ver/optimus.version" slurp .trim)
   :description "An API for storing and loading data with transactional semantics"
   :url "https://github.com/BrunoBonacci/optimus"
-  :license {:name "All rights reserved"}
+  :license {:name "Apache License 2.0"
+            :url "http://www.apache.org/licenses/LICENSE-2.0"}
 
   :dependencies [[org.clojure/clojure "1.10.1"]
 
